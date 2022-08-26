@@ -1,11 +1,14 @@
+import json
+from pickle import TRUE
 from brownie import JattToken, TokenFarm, config, network
 from scripts.helpfulScripts import getAccount, getContract
 from web3 import Web3
+import yaml
 
 KEPT_BALANCE = Web3.toWei(100, "ether")
 
 
-def deployTokenFarmAndToken():
+def deployTokenFarmAndToken(updateFront=False):
     account = getAccount()
     jattToken = JattToken.deploy({"from": account})
     tokenFarm = TokenFarm.deploy(
@@ -25,6 +28,8 @@ def deployTokenFarmAndToken():
         fauToken: getContract("dai_usd_pricefeed"),
         wethToken: getContract("WETH_Token"),
     }
+    if updateFront == True:
+        updateFrontEnd()
     addAllowedTokens(tokenFarm, dicOfAllowedToken, account)
     return tokenFarm, jattToken
 
@@ -40,5 +45,13 @@ def addAllowedTokens(tokenFarm, dictOfAllowedToken, account):
     return tokenFarm
 
 
+def updateFrontEnd():
+    with open("brownie-config.yaml", "r") as brownieConfig:
+        configDict = yaml.load(brownieConfig, Loader=yaml.FullLoader)
+        with open("./front-end/src/brownie-config.json", "w") as brownieConfigJson:
+            json.dump(configDict, brownieConfig)
+        print("Front end updated!f")
+
+
 def main():
-    deployTokenFarmAndToken()
+    deployTokenFarmAndToken(updateFront=True)
