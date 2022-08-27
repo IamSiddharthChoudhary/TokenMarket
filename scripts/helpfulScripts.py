@@ -59,6 +59,6 @@ def getContract(contractName):
     else:
         contractAddress = config["networks"][network.show_active()][contractName]
         contract = Contract.from_abi(
-            contractType.name, contractAddress, contractType.abi
+            contractType._name, contractAddress, contractType.abi
         )
     return contract

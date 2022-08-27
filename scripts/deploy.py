@@ -4,6 +4,8 @@ from brownie import JattToken, TokenFarm, config, network
 from scripts.helpfulScripts import getAccount, getContract
 from web3 import Web3
 import yaml
+import shutil
+import os
 
 KEPT_BALANCE = Web3.toWei(100, "ether")
 
@@ -21,8 +23,8 @@ def deployTokenFarmAndToken(updateFront=False):
     )
     tx.wait(1)
 
-    wethToken = getContract("WETH_Token")
     fauToken = getContract("DAI_Token")
+    wethToken = getContract("WETH_Token")
     dicOfAllowedToken = {
         jattToken: getContract("dai_usd_pricefeed"),
         fauToken: getContract("dai_usd_pricefeed"),
@@ -46,11 +48,20 @@ def addAllowedTokens(tokenFarm, dictOfAllowedToken, account):
 
 
 def updateFrontEnd():
+    # Send the build folder
+    copyChainInfoToFrontEnd("./build", "./front-end/src/chain-info")
+    # Sending front end our config in JSON format
     with open("brownie-config.yaml", "r") as brownieConfig:
         configDict = yaml.load(brownieConfig, Loader=yaml.FullLoader)
         with open("./front-end/src/brownie-config.json", "w") as brownieConfigJson:
-            json.dump(configDict, brownieConfig)
-        print("Front end updated!f")
+            json.dump(configDict, brownieConfigJson)
+        print("Front end updated!")
+
+
+def copyChainInfoToFrontEnd(src, dest):
+    if os.path.exists(dest):
+        shutil.rmtree(dest)
+    shutil.copytree(src, dest)
 
 
 def main():
