@@ -3,6 +3,7 @@ import './App.css';
 import {DAppProvider,ChainId} from "@usedapp/core"
 import {Header} from "./components/Header"
 import {Container} from "@material-ui/core"
+import {Main} from "./components/Main"
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <div id="App-logo-spin">
           Jatt
         </div>
+        <Main/>
       </Container>
     </DAppProvider> 
   )

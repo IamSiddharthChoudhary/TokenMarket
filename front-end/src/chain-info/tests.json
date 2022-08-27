@@ -1,0 +1,16 @@
+{
+  "contracts": {
+    "JattToken": "6e80be58bae41c1c2465d283d4c006c8810638cf",
+    "LinkToken": "49e7bae2df618e81d877632c6ad55872ff2ce801",
+    "MockDAI": "3684ed0b1ef26a0d1cc29a8baab54be1f50995d1",
+    "MockV3Aggregator": "9e734e161b5cafcca52a917f10266f5a8bc05b28",
+    "MockWeth": "2b7aba51d3fc743db189d87c5e50364c6fecba7b",
+    "OpenZeppelin/openzeppelin-contracts@4.7.3/ERC20": "38166fcfbc8e730a0752b73e497cde48b5457655",
+    "TokenFarm": "4e9034a39b9efe7d5bc2a6be585b6ad028250c68",
+    "smartcontractkit/chainlink@1.7.0/BasicToken": "92084ac5279a2a3db988d9e01d7e6d3e3a4dab8d",
+    "smartcontractkit/chainlink@1.7.0/SafeMathChainlink": "bf84f5dba942291289c80f271862cb515ce813ab",
+    "smartcontractkit/chainlink@1.7.0/StandardToken": "7f21b0e2f1d1fcf89f4466183c9e73bc3cf77276"
+  },
+  "tests": {},
+  "tx": {}
+}
