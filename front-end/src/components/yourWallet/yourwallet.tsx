@@ -1,23 +1,28 @@
 import { Token } from "../Main";
 import React, { useState } from "react";
 import { Box } from "@material-ui/core";
-import { Tabs, Tab } from "@material-ui/core";
+import { TabContext, TabList, TabPanel } from "@material-ui/lab";
+import { Tab } from "@material-ui/core";
 
 interface YourWalletProps {
   supportedTokens: Array<Token>;
 }
 
 export const YourWallet = ({ supportedTokens }: YourWalletProps) => {
-  const [selectedTokenIndex, setSelectedTokenIndex] = useState < number > [0];
+  const [selectedTokenIndex, setSelectedTokenIndex] = useState<number>(0);
   return (
     <Box>
       <h1>Your Wallet</h1>
       <Box>
-        <Tabs value={selectedTokenIndex.toString()} onChange={} centered>
-          <Tab label="Item One" />
-          <Tab label="Item Two" />
-          <Tab label="Item Three" />
-        </Tabs>
+        <TabContext value={selectedTokenIndex.toString()}>
+          <TabList aria-label="stake from tabs">
+            {supportedTokens.map((token, index) => {
+              return (
+                <Tab label={token.name} value={index.toString()} key={index} />
+              );
+            })}
+          </TabList>
+        </TabContext>
       </Box>
     </Box>
   );

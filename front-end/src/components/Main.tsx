@@ -7,7 +7,7 @@ import networkMapping from "../chain-info/deployments/map.json";
 import Config from "../brownie-config.json";
 import jattImg from "../images/jattToken.png";
 import wethImg from "../images/wethToken.jpg";
-import { YourWallet } from "./yourWallet";
+import { YourWallet } from "./yourWallet/yourwallet";
 import daiImg from "../images/dai.png";
 
 export type Token = {
