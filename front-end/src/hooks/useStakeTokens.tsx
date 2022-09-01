@@ -43,7 +43,7 @@ export const useStakeTokens = (tokenAddress: string) => {
     if (approveERC20State.status == "Success") {
       stakeSend(amountToStake, tokenAddress);
     }
-  }, [approveERC20State]);
+  }, [approveERC20State, amountToStake, tokenAddress]);
 
   return { approveToStake, approveERC20State };
 };
