@@ -68,7 +68,7 @@ export const StakeToken = ({ token }: StakeTokenInterface) => {
         size="large"
         disabled={Mining}
       >
-        {Mining}? <CircularProgress size={26} /> : Stake!!
+        {Mining? <CircularProgress size={26} /> : "Staked!!"}
       </Button>
     </div>
   );
