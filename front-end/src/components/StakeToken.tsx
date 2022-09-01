@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Token } from "./Main";
-import { Button, Input } from "@material-ui/core";
+import { Button, Input, CircularProgress } from "@material-ui/core";
 import { formatUnits } from "@ethersproject/units";
 import { useTokenBalance, useEthers, useNotifications } from "@usedapp/core";
 import { useStakeTokens } from "../hooks/useStakeTokens";
@@ -50,16 +50,26 @@ export const StakeToken = ({ token }: StakeTokenInterface) => {
     }
   }, [notifications]);
 
-  const { approveToStake, approveERC20State } = useStakeTokens(tokenAddress);
+  const { approveToStake, approveAndStakeERC20State } =
+    useStakeTokens(tokenAddress);
   const handleSubmit = () => {
     const amountToWei = utils.parseEther(amount.toString());
     return approveToStake(amountToWei.toString());
   };
 
+  const Mining = approveAndStakeERC20State.status === "Mining";
+
   return (
     <div>
       <Input onChange={handleInput} />
-      <Button onClick={handleSubmit}>Stake</Button>
+      <Button
+        onClick={handleSubmit}
+        color="primary"
+        size="large"
+        disabled={Mining}
+      >
+        {Mining}? <CircularProgress size={26} /> : Stake!!
+      </Button>
     </div>
   );
 };
