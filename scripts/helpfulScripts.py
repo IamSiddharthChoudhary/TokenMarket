@@ -9,6 +9,7 @@ from brownie import (
     MockV3Aggregator,
     MockDAI,
     MockWeth,
+    MockERC20
 )
 
 LOCAL_DEVELOPMENT_ENVIRONMENTS = [
@@ -24,6 +25,7 @@ contractToMock = {
     "dai_usd_pricefeed": MockV3Aggregator,
     "DAI_Token": MockDAI,
     "WETH_Token": MockWeth,
+    "ERC20" : MockERC20
 }
 
 
@@ -47,6 +49,8 @@ def deployMocks():
     print(f"DAI token mock deployed to {dai.address}")
     weth = MockWeth.deploy({"from": account})
     print(f"WETH token mock deployedd to {weth.address}")
+    erc20 = MockERC20.deploy({"from":account})
+    print(f"Erc20 token deployed to {erc20.address}")
     print("Deployed Mocks!!")
 
 

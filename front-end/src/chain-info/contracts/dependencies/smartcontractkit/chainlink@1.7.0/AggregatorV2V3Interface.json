@@ -240,51 +240,59 @@
     }
   ],
   "allSourcePaths": {
-    "0": "C:/Users/Siddharth/.brownie/packages/smartcontractkit/chainlink@1.7.0/contracts/src/v0.6/interfaces/AggregatorInterface.sol",
-    "1": "C:/Users/Siddharth/.brownie/packages/smartcontractkit/chainlink@1.7.0/contracts/src/v0.6/interfaces/AggregatorV2V3Interface.sol",
-    "2": "C:/Users/Siddharth/.brownie/packages/smartcontractkit/chainlink@1.7.0/contracts/src/v0.6/interfaces/AggregatorV3Interface.sol"
+    "4": "C:/Users/Siddharth/.brownie/packages/smartcontractkit/chainlink@1.7.0/contracts/src/v0.8/interfaces/AggregatorInterface.sol",
+    "5": "C:/Users/Siddharth/.brownie/packages/smartcontractkit/chainlink@1.7.0/contracts/src/v0.8/interfaces/AggregatorV2V3Interface.sol",
+    "6": "C:/Users/Siddharth/.brownie/packages/smartcontractkit/chainlink@1.7.0/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol"
   },
   "ast": {
-    "absolutePath": "C:/Users/Siddharth/.brownie/packages/smartcontractkit/chainlink@1.7.0/contracts/src/v0.6/interfaces/AggregatorV2V3Interface.sol",
+    "absolutePath": "C:/Users/Siddharth/.brownie/packages/smartcontractkit/chainlink@1.7.0/contracts/src/v0.8/interfaces/AggregatorV2V3Interface.sol",
     "exportedSymbols": {
+      "AggregatorInterface": [
+        993
+      ],
       "AggregatorV2V3Interface": [
-        214
+        820
+      ],
+      "AggregatorV3Interface": [
+        1039
       ]
     },
-    "id": 215,
+    "id": 821,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 207,
+        "id": 813,
         "literals": [
           "solidity",
           "^",
-          "0.6",
+          "0.8",
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "32:23:1"
+        "src": "32:23:5"
       },
       {
-        "absolutePath": "C:/Users/Siddharth/.brownie/packages/smartcontractkit/chainlink@1.7.0/contracts/src/v0.6/interfaces/AggregatorInterface.sol",
+        "absolutePath": "C:/Users/Siddharth/.brownie/packages/smartcontractkit/chainlink@1.7.0/contracts/src/v0.8/interfaces/AggregatorInterface.sol",
         "file": "./AggregatorInterface.sol",
-        "id": 208,
+        "id": 814,
+        "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 215,
-        "sourceUnit": 263,
-        "src": "57:35:1",
+        "scope": 821,
+        "sourceUnit": 994,
+        "src": "57:35:5",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "absolutePath": "C:/Users/Siddharth/.brownie/packages/smartcontractkit/chainlink@1.7.0/contracts/src/v0.6/interfaces/AggregatorV3Interface.sol",
+        "absolutePath": "C:/Users/Siddharth/.brownie/packages/smartcontractkit/chainlink@1.7.0/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol",
         "file": "./AggregatorV3Interface.sol",
-        "id": 209,
+        "id": 815,
+        "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 215,
-        "sourceUnit": 309,
-        "src": "93:37:1",
+        "scope": 821,
+        "sourceUnit": 1040,
+        "src": "93:37:5",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -292,63 +300,56 @@
         "abstract": false,
         "baseContracts": [
           {
-            "arguments": null,
             "baseName": {
-              "contractScope": null,
-              "id": 210,
+              "id": 816,
               "name": "AggregatorInterface",
-              "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 262,
-              "src": "169:19:1",
-              "typeDescriptions": {
-                "typeIdentifier": "t_contract$_AggregatorInterface_$262",
-                "typeString": "contract AggregatorInterface"
-              }
+              "nameLocations": [
+                "169:19:5"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 993,
+              "src": "169:19:5"
             },
-            "id": 211,
+            "id": 817,
             "nodeType": "InheritanceSpecifier",
-            "src": "169:19:1"
+            "src": "169:19:5"
           },
           {
-            "arguments": null,
             "baseName": {
-              "contractScope": null,
-              "id": 212,
+              "id": 818,
               "name": "AggregatorV3Interface",
-              "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 308,
-              "src": "190:21:1",
-              "typeDescriptions": {
-                "typeIdentifier": "t_contract$_AggregatorV3Interface_$308",
-                "typeString": "contract AggregatorV3Interface"
-              }
+              "nameLocations": [
+                "190:21:5"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 1039,
+              "src": "190:21:5"
             },
-            "id": 213,
+            "id": 819,
             "nodeType": "InheritanceSpecifier",
-            "src": "190:21:1"
+            "src": "190:21:5"
           }
         ],
-        "contractDependencies": [
-          262,
-          308
-        ],
+        "canonicalName": "AggregatorV2V3Interface",
+        "contractDependencies": [],
         "contractKind": "interface",
-        "documentation": null,
         "fullyImplemented": false,
-        "id": 214,
+        "id": 820,
         "linearizedBaseContracts": [
-          214,
-          308,
-          262
+          820,
+          1039,
+          993
         ],
         "name": "AggregatorV2V3Interface",
+        "nameLocation": "142:23:5",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 215,
-        "src": "132:83:1"
+        "scope": 821,
+        "src": "132:82:5",
+        "usedErrors": []
       }
     ],
-    "src": "32:184:1"
+    "src": "32:183:5"
   },
   "bytecode": "",
   "bytecodeSha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
@@ -358,7 +359,7 @@
       "enabled": true,
       "runs": 200
     },
-    "version": "0.6.12+commit.27d51765"
+    "version": "0.8.16+commit.07a7930e"
   },
   "contractName": "AggregatorV2V3Interface",
   "coverageMap": {
@@ -379,13 +380,13 @@
   },
   "offset": [
     132,
-    215
+    214
   ],
   "opcodes": "",
   "pcMap": {},
-  "sha1": "28145bea34cc6cdbfcebe091314fb602700f19e6",
-  "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.6.0;\n\nimport \"./AggregatorInterface.sol\";\nimport \"./AggregatorV3Interface.sol\";\n\ninterface AggregatorV2V3Interface is AggregatorInterface, AggregatorV3Interface\n{\n}\n",
+  "sha1": "f55523e2fbcab717b1e849c30330aa43967563d1",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\nimport \"./AggregatorInterface.sol\";\nimport \"./AggregatorV3Interface.sol\";\n\ninterface AggregatorV2V3Interface is AggregatorInterface, AggregatorV3Interface {}\n",
   "sourceMap": "",
-  "sourcePath": "C:/Users/Siddharth/.brownie/packages/smartcontractkit/chainlink@1.7.0/contracts/src/v0.6/interfaces/AggregatorV2V3Interface.sol",
+  "sourcePath": "C:/Users/Siddharth/.brownie/packages/smartcontractkit/chainlink@1.7.0/contracts/src/v0.8/interfaces/AggregatorV2V3Interface.sol",
   "type": "interface"
 }

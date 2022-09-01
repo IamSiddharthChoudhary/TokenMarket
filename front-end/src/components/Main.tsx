@@ -2,12 +2,12 @@
 /// <reference types="react-scripts"/>
 import { useEthers } from "@usedapp/core";
 import helperConfig from "../helper-config.json";
-import { constants } from "ethers";
 import networkMapping from "../chain-info/deployments/map.json";
 import Config from "../brownie-config.json";
 import jattImg from "../images/jattToken.png";
 import wethImg from "../images/wethToken.jpg";
 import { YourWallet } from "./yourWallet/yourwallet";
+import { constants } from "ethers";
 import daiImg from "../images/dai.png";
 
 export type Token = {
