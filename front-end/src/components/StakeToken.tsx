@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Token } from "./Main";
 import { Button, Input } from "@material-ui/core";
 import { formatUnits } from "@ethersproject/units";
-import { useTokenBalance, useEthers } from "@usedapp/core";
+import { useTokenBalance, useEthers, useNotifications } from "@usedapp/core";
 import { useStakeTokens } from "../hooks/useStakeTokens";
 import { utils } from "ethers";
 
@@ -18,6 +18,7 @@ export const StakeToken = ({ token }: StakeTokenInterface) => {
     ? parseFloat(formatUnits(tokenBalance, 18))
     : 0;
 
+  const { notifications } = useNotifications();
   const [amount, setAmount] = useState<
     number | string | Array<number | string>
   >(0);
@@ -27,6 +28,27 @@ export const StakeToken = ({ token }: StakeTokenInterface) => {
       event.target.value === "" ? "" : Number(event.target.value);
     setAmount(newAmount);
   };
+
+  useEffect(() => {
+    if (
+      notifications.filter(
+        (notifications) =>
+          notifications.type === "transactionSucceed" &&
+          notifications.transactionName === "Approve ERC20 Transfer"
+      ).length > 0
+    ) {
+      console.log("Approved");
+    }
+    if (
+      notifications.filter(
+        (notifications) =>
+          notifications.type === "transactionSucceed" &&
+          notifications.transactionName === "Stake token"
+      ).length > 0
+    ) {
+      console.log("Token Staked");
+    }
+  }, [notifications]);
 
   const { approveToStake, approveERC20State } = useStakeTokens(tokenAddress);
   const handleSubmit = () => {
